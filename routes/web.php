@@ -16,3 +16,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->get('/products/{provider_category_id}', 'ProductController@getProducts');
+$router->get('/categories', 'CategoriesController@getCategories');
+$router->get('/provider/menu/{provider_id}', 'ProductController@getMenu');
+$router->get('/providers/categories/{category_id}', 'ProviderController@getProvidersByCategory');
+$router->get('/providers/{provider_id}', 'ProviderController@getProvider');
